@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated user profile and personal Karnataka travel preferences",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth user identifier matching document ID" },
+        "fullName": { "type": "string", "description": "Full name of the user", "maxLength": 100 },
+        "email": { "type": "string", "description": "User email address", "format": "email", "maxLength": 150 },
+        "phoneNumber": { "type": "string", "description": "Optional mobile number with country code", "maxLength": 20 },
+        "dateOfBirth": { "type": "string", "description": "Optional date of birth (YYYY-MM-DD)", "maxLength": 10 },
+        "homeCity": { "type": "string", "description": "User home city or state", "maxLength": 80 },
+        "preferredLanguage": { "type": "string", "enum": ["en", "kn"], "description": "Preferred interface language" },
+        "travelInterests": { "type": "array", "description": "Selected travel interest tags (max 10)", "maxLength": 10 },
+        "photoURL": { "type": "string", "description": "Optional verified profile photo URL", "maxLength": 500 },
+        "emailOtpVerified": { "type": "boolean", "description": "Whether email OTP verification succeeded" },
+        "mobileOtpVerified": { "type": "boolean", "description": "Whether Indian mobile SMS OTP verification succeeded" },
+        "phoneVerified": { "type": "boolean", "description": "Whether phone number is verified via Firebase" },
+        "isFullyVerified": { "type": "boolean", "description": "Whether both email and mobile OTP verifications are complete" },
+        "authProvider": { "type": "string", "enum": ["password", "google", "github"], "description": "Authentication method used" },
+        "createdAt": { "type": "string", "description": "Account document creation ISO timestamp" },
+        "updatedAt": { "type": "string", "description": "Account document last updated ISO timestamp" }
+      },
+      "required": ["uid", "fullName", "email"]
+    },
+    "SavedTrip": {
+      "title": "SavedTrip",
+      "description": "Custom or AI-generated Karnataka itinerary saved to private profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique trip record identifier matching document ID" },
+        "userId": { "type": "string", "description": "UID of owner user" },
+        "title": { "type": "string", "description": "Trip title / circuit description", "maxLength": 150 },
+        "startCity": { "type": "string", "description": "Origin city in Karnataka or border hub", "maxLength": 60 },
+        "durationDays": { "type": "number", "description": "Duration of itinerary in days (1-14)" },
+        "budgetTier": { "type": "string", "description": "Budget tier selected: budget, comfort, or luxury" },
+        "travelersCount": { "type": "number", "description": "Number of travelers" },
+        "tripType": { "type": "string", "description": "Optional trip type / theme" },
+        "destinations": { "type": "array", "description": "Destinations covered in the trip" },
+        "totalEstimatedCost": { "type": "number", "description": "Estimated total trip budget in INR" },
+        "days": { "type": "array", "description": "Day-by-day itinerary breakdown" },
+        "createdAt": { "type": "string", "description": "Creation timestamp ISO" },
+        "updatedAt": { "type": "string", "description": "Update timestamp ISO" }
+      },
+      "required": ["id", "userId", "title", "startCity", "durationDays"]
+    },
+    "UserFavorite": {
+      "title": "UserFavorite",
+      "description": "Bookmarked favorite Karnataka destination for user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Favorite item ID matching document ID" },
+        "userId": { "type": "string", "description": "UID of owner user" },
+        "destinationId": { "type": "string", "description": "ID of favorited Karnataka destination" },
+        "destinationName": { "type": "string", "description": "Name of destination" },
+        "category": { "type": "string", "description": "Destination category" },
+        "district": { "type": "string", "description": "Karnataka district" },
+        "imageUrl": { "type": "string", "description": "Destination banner or card image URL" },
+        "createdAt": { "type": "string", "description": "Favorite bookmark ISO timestamp" }
+      },
+      "required": ["id", "userId", "destinationId", "destinationName"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Strictly private user account profile and travel preferences"
+    },
+    "/users/{userId}/trips/{tripId}": {
+      "schema": "SavedTrip",
+      "description": "Private user saved itineraries with day-by-day routes and cost breakdown"
+    },
+    "/users/{userId}/favorites/{favoriteId}": {
+      "schema": "UserFavorite",
+      "description": "Private user bookmarked and favorited destinations"
+    }
+  }
+}

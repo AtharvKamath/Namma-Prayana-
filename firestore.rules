@@ -1,0 +1,109 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null && request.auth.uid != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128;
+    }
+
+    // Validation for UserProfile
+    function isValidUserProfile(data) {
+      return data.keys().hasAll(['uid', 'fullName', 'email'])
+        && data.keys().hasOnly(['uid', 'fullName', 'email', 'phoneNumber', 'dateOfBirth', 'homeCity', 'preferredLanguage', 'travelInterests', 'photoURL', 'emailOtpVerified', 'mobileOtpVerified', 'phoneVerified', 'isFullyVerified', 'authProvider', 'createdAt', 'updatedAt'])
+        && data.uid == request.auth.uid
+        && data.fullName is string && data.fullName.size() >= 2 && data.fullName.size() <= 100
+        && data.email is string && data.email.size() >= 5 && data.email.size() <= 150
+        && (!('phoneNumber' in data) || data.phoneNumber == null || (data.phoneNumber is string && data.phoneNumber.size() <= 20))
+        && (!('dateOfBirth' in data) || data.dateOfBirth == null || (data.dateOfBirth is string && data.dateOfBirth.size() <= 10))
+        && (!('homeCity' in data) || data.homeCity == null || (data.homeCity is string && data.homeCity.size() <= 80))
+        && (!('preferredLanguage' in data) || data.preferredLanguage == null || data.preferredLanguage in ['en', 'kn'])
+        && (!('travelInterests' in data) || data.travelInterests == null || (data.travelInterests is list && data.travelInterests.size() <= 10))
+        && (!('photoURL' in data) || data.photoURL == null || (data.photoURL is string && data.photoURL.size() <= 500))
+        && (!('emailOtpVerified' in data) || data.emailOtpVerified is bool)
+        && (!('mobileOtpVerified' in data) || data.mobileOtpVerified is bool)
+        && (!('phoneVerified' in data) || data.phoneVerified is bool)
+        && (!('isFullyVerified' in data) || data.isFullyVerified is bool)
+        && (!('authProvider' in data) || data.authProvider in ['password', 'google', 'github'])
+        && (!('createdAt' in data) || data.createdAt is string)
+        && (!('updatedAt' in data) || data.updatedAt is string);
+    }
+
+    // Validation for SavedTrip
+    function isValidSavedTrip(data, userId) {
+      return data.keys().hasAll(['id', 'userId', 'title', 'startCity', 'durationDays'])
+        && data.userId == request.auth.uid
+        && data.userId == userId
+        && data.id is string && data.id.size() > 0 && data.id.size() <= 100
+        && data.title is string && data.title.size() > 0 && data.title.size() <= 150
+        && data.startCity is string && data.startCity.size() > 0 && data.startCity.size() <= 60
+        && data.durationDays is number && data.durationDays >= 1 && data.durationDays <= 30
+        && (!('budgetTier' in data) || data.budgetTier is string)
+        && (!('travelersCount' in data) || data.travelersCount is number)
+        && (!('tripType' in data) || data.tripType is string)
+        && (!('destinations' in data) || (data.destinations is list && data.destinations.size() <= 50))
+        && (!('totalEstimatedCost' in data) || data.totalEstimatedCost is number)
+        && (!('days' in data) || data.days is list)
+        && (!('createdAt' in data) || data.createdAt is string)
+        && (!('updatedAt' in data) || data.updatedAt is string);
+    }
+
+    // Validation for UserFavorite
+    function isValidUserFavorite(data, userId) {
+      return data.keys().hasAll(['id', 'userId', 'destinationId', 'destinationName'])
+        && data.userId == request.auth.uid
+        && data.userId == userId
+        && data.id is string && data.id.size() > 0 && data.id.size() <= 100
+        && data.destinationId is string && data.destinationId.size() > 0 && data.destinationId.size() <= 80
+        && data.destinationName is string && data.destinationName.size() > 0 && data.destinationName.size() <= 100
+        && (!('category' in data) || data.category is string)
+        && (!('district' in data) || data.district is string)
+        && (!('imageUrl' in data) || data.imageUrl is string)
+        && (!('createdAt' in data) || data.createdAt is string);
+    }
+
+    // Connectivity test collection
+    match /test/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // User profile documents (Strictly private: only owner can read, write, or delete)
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if false; // Deny broad collection scan of all users to protect PII
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUserProfile(request.resource.data);
+      allow update: if isOwner(userId) && isValidId(userId) && isValidUserProfile(request.resource.data) && request.resource.data.uid == resource.data.uid;
+      allow delete: if isOwner(userId) && isValidId(userId);
+
+      // Private user saved trips
+      match /trips/{tripId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidId(tripId) && isValidSavedTrip(request.resource.data, userId);
+        allow update: if isOwner(userId) && isValidId(tripId) && isValidSavedTrip(request.resource.data, userId) && request.resource.data.userId == resource.data.userId;
+        allow delete: if isOwner(userId) && isValidId(tripId);
+      }
+
+      // Private user favorite destinations
+      match /favorites/{favoriteId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidId(favoriteId) && isValidUserFavorite(request.resource.data, userId);
+        allow update: if isOwner(userId) && isValidId(favoriteId) && isValidUserFavorite(request.resource.data, userId) && request.resource.data.userId == resource.data.userId;
+        allow delete: if isOwner(userId) && isValidId(favoriteId);
+      }
+    }
+
+    // Default deny all other paths
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

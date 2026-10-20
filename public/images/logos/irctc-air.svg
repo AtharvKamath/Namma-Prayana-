@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94 40" width="94" height="40">
+  <rect width="94" height="40" fill="transparent"/>
+  <!-- Circular IRCTC Emblem -->
+  <g transform="translate(2, 2)">
+    <circle cx="18" cy="18" r="18" fill="#0b4c76"/>
+    <circle cx="18" cy="18" r="13" fill="#ffffff"/>
+    <circle cx="18" cy="18" r="8" fill="#0b4c76"/>
+    <path d="M 5 18 C 10 9, 26 9, 31 18 C 26 12, 10 12, 5 18 Z" fill="#f26522"/>
+    <path d="M 18 4 L 21 15 L 15 15 Z" fill="#f26522"/>
+    <path d="M 18 12 L 19.8 16.2 L 24 18 L 19.8 19.8 L 18 24 L 16.2 19.8 L 12 18 L 16.2 16.2 Z" fill="#ffffff"/>
+  </g>
+  <!-- IRCTC Text -->
+  <text x="42" y="19" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" fill="#0b4c76" letter-spacing="1">IRCTC</text>
+  <!-- AIR Pill -->
+  <g transform="translate(42, 23)">
+    <rect width="48" height="14" rx="3.5" fill="#f26522"/>
+    <text x="24" y="10.5" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">AIR ✈</text>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 40" width="114" height="40">
+  <rect width="114" height="40" fill="transparent"/>
+  <!-- Tata Air India Vista Arch -->
+  <g transform="translate(1, 1)">
+    <path d="M 4 38 L 4 15 C 4 5, 26 5, 26 15 L 26 38 Z" fill="#d81414"/>
+    <path d="M 8 38 L 8 16 C 8 8, 22 8, 22 16 L 22 38 Z" fill="#c49a45"/>
+    <path d="M 11 38 L 11 17 C 11 10, 19 10, 19 17 L 19 38 Z" fill="#ffffff"/>
+    <polygon points="15,13 17,20 23,18 19,23 21,29 15,26 9,29 11,23 7,18 13,20" fill="#c49a45"/>
+  </g>
+  <!-- AIR INDIA Bold Text -->
+  <text x="32" y="26" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="900" fill="#d81414" letter-spacing="1">AIR INDIA</text>
+</svg>

@@ -1,0 +1,6 @@
+{
+  "name": "Namma Prayana (ನಮ್ಮ ಪ್ರಯಾಣ)",
+  "description": "Your Journey, Your Story. Discover Karnataka. Plan smarter. Travel better with AI itinerary planning, interactive maps, authentic Kannada travel helper, and verified destination guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

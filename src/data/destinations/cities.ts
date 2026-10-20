@@ -1,0 +1,150 @@
+import type { Destination } from '../../types/travel.ts';
+
+export const CITIES_AND_CULTURE_DESTINATIONS: Destination[] = [
+  {
+    id: 'belagavi',
+    name: 'Belagavi (Belgaum Fort & Kittur)',
+    kannadaName: 'ಬೆಳಗಾವಿ (ಬೆಳಗಾವಿ ಕೋಟೆ ಮತ್ತು ಕಿತ್ತೂರು)',
+    district: 'Belagavi',
+    state: 'Karnataka' as const,
+    googlePlaceId: 'ChIJP-aT6QZpvzsR74n5y3v91c1',
+    region: 'North Karnataka',
+    tagline: 'Historic northern commercial gateway, Ratta fortress, Kamal Basti & Kittur Chennamma heritage',
+    taglineKn: 'ಉತ್ತರ ಕರ್ನಾಟಕದ ಸಾಂಸ್ಕೃತಿಕ ಹೆಬ್ಬಾಗಿಲು, ರಟ್ಟರ ಕಲ್ಲಿನ ಕೋಟೆ, ಕಮಲ ಬಸದಿ ಮತ್ತು ಕಿತ್ತೂರು ಚೆನ್ನಮ್ಮನ ಐತಿಹಾಸಿಕ ತಾಣ',
+    description: 'A vibrant historical city nestled at the foothills of the Western Ghats near the Maharashtra and Goa borders. Renowned for the 12th-century oval Belgaum Fort containing the exquisite Chalukyan Kamal Basti (Lotus Temple), the monumental Suvarna Vidhana Soudha, and heroic Rani Chennamma’s Kittur Fort nearby.',
+    descriptionKn: 'ಪಶ್ಚಿಮ ಘಟ್ಟಗಳ ತಪ್ಪಲಿನಲ್ಲಿರುವ ಉತ್ತರ ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಐತಿಹಾಸಿಕ ನಗರ. 12ನೇ ಶತಮಾನದ ರಟ್ಟರ ಕೋಟೆ, ಕಮಲದ ಹೂವಿನಂತೆ ಕೆತ್ತಲಾದ ಛಾವಣಿಯುಳ್ಳ ಕಮಲ ಬಸದಿ, ಭವ್ಯ ಸುವರ್ಣ ವಿಧಾನ ಸೌಧ ಹಾಗೂ ಬ್ರಿಟಿಷರ ವಿರುದ್ಧ ಸಿಡಿದೆದ್ದ ವೀರರಾಣಿ ಕಿತ್ತೂರು ಚೆನ್ನಮ್ಮನ ಕಿತ್ತೂರು ಕೋಟೆಗೆ ಇದು ಖ್ಯಾತಿ ಪಡೆದಿದೆ.',
+    category: 'culture',
+    rating: 4.7,
+    reviewsCount: 22000,
+    imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Chennamma_Circle%2C_Belagavi.jpg/1280px-Chennamma_Circle%2C_Belagavi.jpg',
+    imageAttribution: 'Wikimedia Commons / CC BY-SA 4.0 (Kittur Rani Chennamma monument and Belagavi city center)',
+    imageAltEn: 'Historic Kittur Rani Chennamma circle and cultural heart of Belagavi city',
+    imageAltKn: 'ಬೆಳಗಾವಿ ನಗರದ ಕಿತ್ತೂರು ರಾಣಿ ಚೆನ್ನಮ್ಮ ವೃತ್ತ ಮತ್ತು ಐತಿಹಾಸಿಕ ತಾಣ',
+    gallery: [
+      'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80'
+    ],
+    bestTimeToVisit: 'October to March (Pleasant, breezy Malnad-Deccan winter climate)',
+    bestTimeToVisitKn: 'ಅಕ್ಟೋಬರ್‌ನಿಂದ ಮಾರ್ಚ್ (ಹಿತಕರ ಚಳಿಗಾಲ ಮತ್ತು ಸ್ಮಾರಕಗಳ ವೀಕ್ಷಣೆಗೆ ಸೂಕ್ತ)',
+    lat: 15.8497,
+    lng: 74.4977,
+    address: 'Belgaum Fort Area, Belagavi, Karnataka 590016',
+    addressKn: 'ಬೆಳಗಾವಿ ಕೋಟೆ, ಬೆಳಗಾವಿ, ಕರ್ನಾಟಕ 590016',
+    openingHours: 'Fort & Kamal Basti: 8:00 AM - 6:30 PM. Suvarna Vidhana Soudha: Exterior viewing 9:00 AM - 6:00 PM daily',
+    openingHoursKn: 'ಕೋಟೆ ಮತ್ತು ಕಮಲ ಬಸದಿ: ಬೆಳಿಗ್ಗೆ 8:00 - ಸಂಜೆ 6:30',
+    entryFee: 'Free entry (ASI protected monuments)',
+    entryFeeKn: 'ಉಚಿತ ಪ್ರವೇಶ (ASI ರಕ್ಷಿತ ಸ್ಮಾರಕ)',
+    entryFeeInr: 0,
+    historicalBackground: 'Founded in the late 12th century by the Ratta dynasty. In 1824, Rani Chennamma of Kittur led an armed rebellion against the British East India Company’s Doctrine of Lapse here, pre-dating the 1857 revolt by three decades.',
+    historicalBackgroundKn: '12ನೇ ಶತಮಾನದಲ್ಲಿ ರಟ್ಟರಿಂದ ಸ್ಥಾಪಿತವಾಯಿತು. 1824 ರಲ್ಲಿ ಕಿತ್ತೂರು ರಾಣಿ ಚೆನ್ನಮ್ಮಳು ಬ್ರಿಟಿಷರ ವಿರುದ್ಧ ಸ್ವಾತಂತ್ರ್ಯ ಸಂಗ್ರಾಮದ ಕಹಳೆ ಮೊಳಗಿಸಿದ ಭಾರತದ ಪ್ರಥಮ ವೀರ ಮಹಿಳೆಯಾಗಿ ಇತಿಹಾಸದಲ್ಲಿ ಚಿರಸ್ಥಾಯಿಯಾದಳು.',
+    mainAttractions: [
+      'Belgaum Fort (1204 CE stone fortress with ramparts, moat, and Persian gateways)',
+      'Kamal Basti (magnificent late Chalukyan Jain temple with a 72-petal inverted stone lotus dome ceiling)',
+      'Suvarna Vidhana Soudha (grand white domed legislative assembly building modeled on Bengaluru’s Vidhana Soudha)',
+      'Ramakrishna Mission Ashram where Swami Vivekananda stayed for 12 days in 1892',
+      'Kittur Fort and Archaeological Museum (45 km away, royal palace ruins of Rani Chennamma)',
+      'Kapileshwara Temple (ancient self-manifested Shiva shrine hailed as the Dakshina Kashi of the north)'
+    ],
+    mainAttractionsKn: [
+      'ಬೆಳಗಾವಿ ಕೋಟೆ (1204ರ ಕಲ್ಲಿನ ಕೋಟೆ, ರಕ್ಷಣಾ ಕಂದಕ ಮತ್ತು ಹೆಬ್ಬಾಗಿಲುಗಳು)',
+      'ಕಮಲ ಬಸದಿ (72 ದಳಗಳ ತಲೆಕೆಳಗಾದ ಕಮಲದ ಹೂವಿನ ಕೆತ್ತನೆಯ ಛಾವಣಿಯುಳ್ಳ ಅದ್ಭುತ ಜೈನ ದೇವಾಲಯ)',
+      'ಸುವರ್ಣ ವಿಧಾನ ಸೌಧ (ಉತ್ತರ ಕರ್ನಾಟಕದ ಆಡಳಿತ ಸೌಧ)',
+      '1892 ರಲ್ಲಿ ಸ್ವಾಮಿ ವಿವೇಕಾನಂದರು 12 ದಿನ ತಂಗಿದ್ದ ರಾಮಕೃಷ್ಣ ಮಿಷನ್ ಆಶ್ರಮ',
+      'ಕಿತ್ತೂರು ರಾಣಿ ಚೆನ್ನಮ್ಮನ ಐತಿಹಾಸಿಕ ಕೋಟೆ ಮತ್ತು ವಸ್ತುಸಂಗ್ರಹಾಲಯ (45 ಕಿ.ಮೀ)',
+      'ಪ್ರಾಚೀನ ಕಪಿಲೇಶ್ವರ ದೇವಾಲಯ'
+    ],
+    recommendedActivities: [
+      'Admiring the monolithic 72-petal stone lotus carved ceiling inside Kamal Basti',
+      'Visiting the historic room of Swami Vivekananda inside the Fort Ramakrishna Ashram',
+      'Photographing the majestic illumination of Suvarna Vidhana Soudha on national holidays',
+      'Savoring the iconic GI-tagged Belagavi Kunda (rich caramelized milk sweet) and Mandige'
+    ],
+    recommendedActivitiesKn: [
+      'ಕಮಲ ಬಸದಿಯ 72 ದಳಗಳ ಕಲ್ಲಿನ ಕಮಲದ ಛಾವಣಿಯ ವೀಕ್ಷಣೆ',
+      'ರಾಮಕೃಷ್ಣ ಮಿಷನ್‌ನಲ್ಲಿ ಸ್ವಾಮಿ ವಿವೇಕಾನಂದರು ತಂಗಿದ್ದ ಕೊಠಡಿಯ ದರ್ಶನ',
+      'ಸುವರ್ಣ ವಿಧಾನ ಸೌಧದ ಭವ್ಯತೆಯ ವೀಕ್ಷಣೆ',
+      'ವಿಶ್ವಪ್ರಸಿದ್ಧ ಬೆಳಗಾವಿ ಕುಂದಾ ಮತ್ತು ಮಾಂಡಿಗೆ ಸಿಹಿ ಸವಿಯುವುದು'
+    ],
+    suggestedDurationHours: 5,
+    accessibilityNotes: 'Broad paved motorable roads throughout the city and fort campus. Ground-level entry to Kamal Basti and Ramakrishna Ashram.',
+    accessibilityNotesKn: 'ನಗರ ಮತ್ತು ಕೋಟೆಯ ಆವರಣದಲ್ಲಿ ಉತ್ತಮ ರಸ್ತೆಗಳಿವೆ. ಕಮಲ ಬಸದಿಗೆ ನೆಲಮಟ್ಟದ ಸುಲಭ ಪ್ರವೇಶವಿದೆ.',
+    officialSource: 'Archaeological Survey of India (ASI) & Belagavi District Administration',
+    officialSourceUrl: 'https://karnatakatourism.org/tour-item/belagavi/',
+    lastVerifiedDate: '2026-03-01',
+    nearestRailwayStation: 'Belagavi Railway Station (BGM) - 2 km',
+    nearestRailwayStationKn: 'ಬೆಳಗಾವಿ ರೈಲ್ವೆ ನಿಲ್ದಾಣ (BGM) - 2 ಕಿ.ಮೀ.',
+    nearestAirport: 'Belagavi Airport Sambra (IXG) - 12 km; Hubballi (HBX) - 100 km; Goa Mopa (GOX) - 110 km',
+    nearestAirportKn: 'ಬೆಳಗಾವಿ ಸಾಂಬ್ರಾ ವಿಮಾನ ನಿಲ್ದಾಣ (IXG) - 12 ಕಿ.ಮೀ; ಗೋವಾ (GOX) - 110 ಕಿ.ಮೀ.',
+    approxDistanceKmFromBengaluru: 505
+  },
+  {
+    id: 'karwar',
+    name: 'Karwar (Rabindranath Tagore Beach & Port)',
+    kannadaName: 'ಕಾರವಾರ (ರವೀಂದ್ರನಾಥ ಠಾಗೋರ್ ಕಡಲತೀರ ಮತ್ತು ಬಂದರು)',
+    district: 'Uttara Kannada',
+    state: 'Karnataka' as const,
+    googlePlaceId: 'ChIJP-aT6QZpvzsR74n5y3v91c2',
+    region: 'Coastal',
+    tagline: 'Inspiring coastal harbor where Kali River meets the sea, celebrated by Tagore',
+    taglineKn: 'ಕಾಳಿ ನದಿ ಮತ್ತು ಅರಬ್ಬಿ ಸಮುದ್ರ ಸಂಗಮಿಸುವ ಕರಾವಳಿ ನಗರಿ ಹಾಗೂ ಠಾಗೋರ್ ಮೆಚ್ಚಿದ ಕಡಲತೀರ',
+    description: 'A picturesque coastal port city nestled between the azure waters of the Arabian Sea and the lush green Western Ghats at the mouth of the Kali River. Famous for Rabindranath Tagore Beach, INS Chapal Warship Museum, Sadashivgad Fort, and tranquil island boat safaris.',
+    descriptionKn: 'ಅರಬ್ಬಿ ಸಮುದ್ರ ಮತ್ತು ಪಶ್ಚಿಮ ಘಟ್ಟಗಳ ನಡುವೆ ಕಾಳಿ ನದಿ ಮುಖಜಭೂಮಿಯಲ್ಲಿರುವ ಸುಂದರ ಕರಾವಳಿ ನಗರ. ರವೀಂದ್ರನಾಥ ಠಾಗೋರ್ ಬೀಚ್, ಐಎನ್‌ಎಸ್ ಚಾಪಲ್ ಯುದ್ಧನೌಕೆ ಮ್ಯೂಸಿಯಂ, ಸದಾಶಿವಗಡ ಕೋಟೆ ಹಾಗೂ ದೇವ್‌ಭಾಗ್ ದ್ವೀಪಗಳಿಗೆ ಇದು ಪ್ರಸಿದ್ಧ.',
+    category: 'culture',
+    rating: 4.7,
+    reviewsCount: 19500,
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Glazing_Rays_on_Rabindranath_Tagore_Beach%2C_Karwar.jpg',
+    imageAttribution: 'Wikimedia Commons / CC BY-SA 4.0 (Sunset rays over Rabindranath Tagore Beach, Karwar)',
+    imageAltEn: 'Golden sunset casting long reflections along Rabindranath Tagore Beach in Karwar',
+    imageAltKn: 'ಕಾರವಾರದ ರವೀಂದ್ರನಾಥ ಟ್ಯಾಗೋರ್ ಕಡಲತೀರದ ಸುಂದರ ಸೂರ್ಯಾಸ್ತ',
+    gallery: [
+      'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80'
+    ],
+    bestTimeToVisit: 'October to April (Pleasant coastal breezes, boat rides, and Karavali Utsav in January)',
+    bestTimeToVisitKn: 'ಅಕ್ಟೋಬರ್‌ನಿಂದ ಏಪ್ರಿಲ್ (ಕರಾವಳಿ ಉತ್ಸವ ಮತ್ತು ದೋಣಿ ವಿಹಾರಕ್ಕೆ ಸುಂದರ ಸಮಯ)',
+    lat: 14.8167,
+    lng: 74.1333,
+    address: 'Rabindranath Tagore Beach Road, Karwar, Uttara Kannada District, Karnataka 581301',
+    addressKn: 'ರವೀಂದ್ರನಾಥ ಠಾಗೋರ್ ಬೀಚ್ ರಸ್ತೆ, ಕಾರವಾರ, ಉತ್ತರ ಕನ್ನಡ ಜಿಲ್ಲೆ, ಕರ್ನಾಟಕ 581301',
+    openingHours: 'Tagore Beach: Open 24 hours. INS Chapal Warship Museum: 9:30 AM - 6:30 PM daily',
+    openingHoursKn: 'ಕಡಲತೀರ: 24 ಗಂಟೆ ಮುಕ್ತ. ಯುದ್ಧನೌಕೆ ಮ್ಯೂಸಿಯಂ: ಬೆಳಿಗ್ಗೆ 9:30 - ಸಂಜೆ 6:30',
+    entryFee: 'Beach: Free | INS Chapal Warship Museum: ~₹25 adults, ₹15 children',
+    entryFeeKn: 'ಕಡಲತೀರ: ಉಚಿತ | ಯುದ್ಧನೌಕೆ ಮ್ಯೂಸಿಯಂ: ~₹25',
+    entryFeeInr: 25,
+    historicalBackground: 'Rabindranath Tagore spent time here in 1882 with his brother Satyendranath Tagore (the first Indian ICS officer). Inspired by a moonlit boat ride on the Kali River, Tagore composed his first dramatic play.',
+    historicalBackgroundKn: '1882 ರಲ್ಲಿ ರವೀಂದ್ರನಾಥ ಠಾಕೂರರು ತಮ್ಮ ಸಹೋದರನೊಂದಿಗೆ ಕಾರವಾರದಲ್ಲಿ ತಂಗಿದ್ದಾಗ ಕಾಳಿ ನದಿಯ ಹುಣ್ಣಿಮೆ ಬೆಳದಿಂಗಳ ದೋಣಿ ಸವಾರಿಯಿಂದ ಪ್ರೇರಿತರಾಗಿ ತಮ್ಮ ಪ್ರಸಿದ್ಧ ನಾಟಕವನ್ನು ರಚಿಸಿದರು.',
+    mainAttractions: [
+      'Rabindranath Tagore Beach with manicured seaside promenade and amphitheater',
+      'INS Chapal (K94) Warship Museum: Real decommissioned Indian Navy missile boat on the shore',
+      'Sadashivgad Hill Fort & Dargah overlooking the Kali River estuary and Arabian Sea bridge',
+      'Oyster Rock Lighthouse island and Kurumgad Island excursions',
+      'Kali River Bridge offering spectacular sunset panoramas of estuary mangrove islands'
+    ],
+    mainAttractionsKn: [
+      'ರವೀಂದ್ರನಾಥ ಠಾಗೋರ್ ಕಡಲತೀರ ಮತ್ತು ವಿಶಾಲ ನಡಿಗೆ ಮಾರ್ಗ',
+      'ಐಎನ್‌ಎಸ್ ಚಾಪಲ್ ಯುದ್ಧನೌಕೆ ಮ್ಯೂಸಿಯಂ (ನೈಜ ಕ್ಷಿಪಣಿ ಹಡಗಿನ ಒಳಾಂಗಣ ವೀಕ್ಷಣೆ)',
+      'ಕಾಳಿ ನದಿ ಸಂಗಮದ ಮೇಲಿರುವ ಐತಿಹಾಸಿಕ ಸದಾಶಿವಗಡ ಕೋಟೆ',
+      'ಕುರುಂಗಡ ದ್ವೀಪ ಮತ್ತು ಲೈಟ್‌ಹೌಸ್ ದೋಣಿ ಸವಾರಿ',
+      'ಕಾಳಿ ನದಿ ಸೇತುವೆಯ ಮೇಲಿನಿಂದ ಸೂರ್ಯಾಸ್ತದ ಅದ್ಭುತ ನೋಟ'
+    ],
+    recommendedActivities: [
+      'Touring inside the decommissioned missile warship INS Chapal with naval guide exhibits',
+      'Walking the seaside promenade at Tagore Beach at sunset tasting local fried fish shacks',
+      'Driving across the scenic Kali River Bridge to visit the Sadashivgad viewpoint'
+    ],
+    recommendedActivitiesKn: [
+      'ಐಎನ್‌ಎಸ್ ಚಾಪಲ್ ಯುದ್ಧನೌಕೆಯ ಒಳಹೊಕ್ಕು ಭಾರತೀಯ ನೌಕಾಪಡೆಯ ಸಾಹಸಗಳ ವೀಕ್ಷಣೆ',
+      'ಠಾಗೋರ್ ಕಡಲತೀರದಲ್ಲಿ ಸಂಜೆ ನಡಿಗೆ ಮತ್ತು ತಾಜಾ ಕಾರವಾರಿ ಮೀನು ಊಟ ಸವಿಯುವುದು',
+      'ಕಾಳಿ ಸೇತುವೆ ದಾಟಿ ಸದಾಶಿವಗಡ ಕೋಟೆಯಿಂದ ಸಾಗರ ಸಂಗಮ ನೋಡುವುದು'
+    ],
+    suggestedDurationHours: 4,
+    accessibilityNotes: 'Paved beach promenade, wheelchair ramps, ample car parking, and accessible public restrooms along Tagore Beach.',
+    accessibilityNotesKn: 'ಕಡಲತೀರದ ಉದ್ದಕ್ಕೂ ಸಮತಟ್ಟಾದ ಕಾಂಕ್ರೀಟ್ ನಡಿಗೆ ಹಾದಿ, ರ‍್ಯಾಂಪ್ ಮತ್ತು ಪಾರ್ಕಿಂಗ್ ಸೌಲಭ್ಯವಿದೆ.',
+    officialSource: 'Karnataka Tourism & Uttara Kannada District Administration',
+    officialSourceUrl: 'https://karnatakatourism.org/tour-item/karwar/',
+    lastVerifiedDate: '2026-03-01',
+    nearestRailwayStation: 'Karwar (KAWR) - 5 km',
+    nearestRailwayStationKn: 'ಕಾರವಾರ (KAWR) - 5 ಕಿ.ಮೀ.',
+    nearestAirport: 'Goa Dabolim (GOI) - 85 km; Goa Mopa (GOX) - 118 km; Hubballi (HBX) - 165 km',
+    nearestAirportKn: 'ಗೋವಾ ದಾಬೋಲಿಮ್ (GOI) - 85 ಕಿ.ಮೀ; ಗೋವಾ ಮೋಪಾ (GOX) - 118 ಕಿ.ಮೀ.',
+    approxDistanceKmFromBengaluru: 520
+  }
+];
