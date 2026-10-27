@@ -1,179 +1,199 @@
-# Namma Prayana (ನಮ್ಮ ಪ್ರಯಾಣ) — "Your Journey, Your Story"
+# Namma Prayana – AI Travel Planner for Karnataka
 
-> Discover Karnataka. Plan smarter. Travel better.
+**Tagline: Your Journey, Your Story**
 
-A modern, production-minded, full-stack travel-planning web application crafted specifically for exploring Karnataka, India. Namma Prayana combines verified destination research, Google Maps Platform geospatial routing, Gemini AI itinerary intelligence, multi-provider travel booking discovery (KSRTC, redBus, AbhiBus, MakeMyTrip, Goibibo, IRCTC), authentic Kannada language assistance, and transparent expense estimation.
+Namma Prayana (ನಮ್ಮ ಪ್ರಯಾಣ) is an AI-based travel planning web application designed to help users explore Karnataka and plan personalized trips. It combines destination discovery, AI-generated itineraries, budget information, Kannada language support, and links to travel services in one platform.
 
----
+## 🌐 Live Demo
 
-## 1. Problem Being Solved
+- **Website:** https://namma-prayana.ai.studio
+- **GitHub Repository:** https://github.com/AtharvKamath/Namma-Prayana-
 
-Travel planning across Karnataka is traditionally fragmented:
-- Travellers struggle to gauge real driving distances between destinations across the Western Ghats (e.g., steep ghat sections like Charmadi or Shiradi Ghat vs. flat expressway corridors like Bengaluru-Mysuru).
-- Generic AI tools invent non-existent attractions or propose geographically unfeasible day plans (e.g. attempting to visit Hampi, Gokarna, and Coorg in a single weekend).
-- Unofficial booking sites confuse travellers with fabricated discounts or fake seat confirmation claims.
-- Travellers lack authentic, respectful Kannada language travel phrases when interacting with local bus conductors, homestay hosts, and artisan markets.
+## 📌 Problem Statement
 
-**Namma Prayana solves this** with an integrated, verified Karnataka travel ecosystem that pairs AI creativity with grounded geographical, cultural, and budgetary realities.
+Planning a trip often requires travellers to search across multiple websites for tourist destinations, activities, budgets, transportation, and accommodation options. This process can be time-consuming, especially for people who need personalized recommendations or prefer using Kannada.
 
----
+Namma Prayana aims to make Karnataka travel planning simpler by bringing destination exploration and personalized itinerary planning together in one web application.
 
-## 2. Key Features
+## 💡 Our Solution
 
-### 🏛️ Verified Karnataka Destination Explorer
-- Curated database of 18+ premier Karnataka destinations:
-  - **Heritage**: Hampi (Vijayanagara), Mysuru Palace, Badami Cave Temples, Pattadakal & Aihole, Belur & Halebidu (UNESCO Hoysala temples).
-  - **Coasts & Beaches**: Gokarna & Om Beach, Udupi & Malpe Beach, St. Mary’s Islands basaltic rocks, Murudeshwar seaside gopura, Mangaluru.
-  - **Hill Stations & Malenadu**: Coorg (Madikeri), Chikkamagaluru (Mullayanagiri peak & coffee cradle), Kudremukh Shola sanctuary.
-  - **Waterfalls & Wildlife**: Jog Falls (Sharavathi plunge), Kabini & Nagarhole tiger reserve, Shivamogga, Dandeli whitewater rafting.
-- Verified ASI & Karnataka Forest Department entry tariffs in INR.
-- Official visiting hours, real GPS coordinates, accessibility notes, and heritage background.
-- Direct links to Google Maps directions.
+Namma Prayana provides a single platform where users can discover places in Karnataka, enter their travel preferences, and generate a suggested itinerary using AI.
 
-### 🤖 Gemini AI & Curated Itinerary Engine
-- Personalized multi-day itinerary generation powered by **Gemini 3.8 Flash** via a secure server-side proxy route.
-- Automatic clustering of geographically proximate destinations to prevent travel fatigue.
-- Morning, afternoon, and evening activity timelines with estimated costs.
-- Transparent budget calculations (Transport, Stays, Food, ASI Monument entries, Local transport, and 10% contingency buffer).
-- Smart budget health indicators with warnings if requested journeys exceed financial constraints.
-- **Fail-safe offline engine**: If Gemini API is unreachable or rate-limited, the system seamlessly generates a verified, curated Karnataka itinerary matching user inputs.
+The application is designed to make travel planning more convenient and accessible, including for Kannada-speaking users.
 
-### 🗺️ Interactive Maps & Routing
-- Interactive map powered by `@vis.gl/react-google-maps` using modern `AdvancedMarkerElement` and custom pin markers.
-- Interactive InfoWindows showcasing destination photography, timings, and direct Google Maps navigation deep links.
+## ✨ Key Features
 
-### 🎟️ Travel Booking Discovery & Fare Comparison
-- Dedicated booking discovery sections for **Buses**, **Hotels & Homestays**, **Flights**, and **Cabs**.
-- Parameter-preserving search links into:
-  - **KSRTC (Awatar)** official portal
-  - **redBus** & **AbhiBus**
-  - **MakeMyTrip** & **Goibibo**
-  - **IRCTC** official Indian Railways portal
-  - **Savaari** outstation chauffeur cabs & **Zoomcar**
-- Benchmark route fares and transit duration comparisons across top Karnataka circuits (e.g., Bengaluru to Mysuru, Coorg, Hampi, Gokarna).
-- Strict transparency: No fabricated live prices, fake seats, or counterfeit booking confirmations.
+- **AI-Based Trip Planning:** Generate personalized travel itineraries using Gemini AI when the AI service is enabled and available.
+- **Personalized Preferences:** Plan trips based on starting location, duration, interests, budget, group size, and transport preferences, where supported by the application.
+- **Explore Karnataka:** Discover tourist destinations across categories such as beaches, temples, waterfalls, and hill stations.
+- **Day-by-Day Itinerary:** View suggested activities organized by day and time of day.
+- **Budget Information:** View estimated trip expenses to help with travel planning.
+- **Kannada Language Support:** Access supported interface content in Kannada.
+- **Transport and Hotel Links:** Explore links to external travel and accommodation services.
+- **Fallback Itinerary Generation:** Use the configured fallback itinerary system when Gemini AI generation is disabled or unavailable, where supported by the application.
 
-### 🗣️ Kannada Travel Helper (ಕನ್ನಡ ಪ್ರವಾಸ ಸಹಾಯಕ)
-- Practical travel phrases organized into Greetings, Directions, Bus & Transport, Hotels, Food & Coffee, Shopping, and Emergency.
-- Triple representation: Authentic Kannada script, phonetic English transliteration, and English translation.
-- Natural speech playback via browser Web Speech API.
-- Quick copy to clipboard with toast feedback.
+*Feature availability may depend on application configuration, network connectivity, and the status of external services.*
 
-### 💾 Browser-Persistent "My Trips"
-- Full offline availability via `localStorage`.
-- Export saved itineraries as JSON backup or print-friendly PDF guides.
-- Import saved trips directly into the app.
-- Interactive timeline editor: reorder days, remove stops, and customize trip notes.
+## 🛠️ Technology Stack
 
----
+The project uses the following technologies and services. Confirm the exact dependencies and configuration in the source code before modifying this list.
 
-## 3. Technology Stack
+- **Frontend:** React, TypeScript, Vite
+- **AI Integration:** Google Gemini API
+- **Backend:** Server-side API for itinerary generation
+- **Authentication and Data:** Firebase Authentication and Cloud Firestore, where configured
+- **Maps and Places:** Google Maps Platform integrations, where configured
+- **Version Control:** Git and GitHub
+- **Deployment:** Google AI Studio-hosted application
 
-- **Frontend**: React 19, TypeScript, Vite, Tailwind CSS v4, Lucide React icons, Motion.
-- **Maps**: Google Maps Platform via `@vis.gl/react-google-maps` with `AdvancedMarkerElement`.
-- **AI**: Google Gemini API via `@google/genai` TypeScript SDK (`gemini-3.8-flash`).
-- **Backend / API**: Express & Vite Connect middleware server-side API proxy.
-- **Persistence**: LocalStorage with JSON Export/Import for client-side privacy and offline resilience.
+## 🏗️ High-Level Architecture
 
----
-
-## 4. Architecture & Data Flow
-
-```
-[User Input / UI Form]
-         │
-         ▼
-[Client: geminiService.ts]
-         │
-         ├──► POST /api/itinerary/generate (Server Route)
-         │           │
-         │           ├──► @google/genai (Gemini 3.8 Flash)
-         │           │       │
-         │           │       ▼
-         │           │    Valid JSON Itinerary with real Karnataka data
-         │           │
-         │           └──► (On quota/failure) ──► generateCuratedFallbackItinerary()
-         │
-         ▼
-[React State / ItineraryView]
-         ├──► InteractiveMap (@vis.gl/react-google-maps)
-         ├──► BudgetCalculator & Savings Tips
-         ├──► Kannada Travel Phrases
-         └──► LocalStorage ("My Trips")
+```text
+             User
+              |
+              v
+     React + TypeScript UI
+              |
+              v
+       Trip Planner Form
+              |
+              v
+       Server-Side API
+              |
+              v
+      Itinerary Generator
+              |
+        +-----+------+
+        |            |
+        v            v
+    Gemini AI    Fallback
+                 Itineraries
+        |            |
+        +-----+------+
+              |
+              v
+      Generated Itinerary
+              |
+              v
+      Results shown to User
 ```
 
----
+Additional application services may include Firebase Authentication, Cloud Firestore, and Google Maps Platform integrations, depending on the configured features.
 
-## 5. Local Development & Installation
+### How It Works
+
+1. The user opens Namma Prayana and explores Karnataka destinations.
+2. The user enters trip preferences in the trip planner.
+3. The frontend sends the itinerary request to the server-side API.
+4. The server generates a suggested itinerary using Gemini AI when enabled, or the configured fallback system.
+5. The generated itinerary is returned to the application and displayed to the user.
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally.
 
 ### Prerequisites
-- Node.js (version 20 or higher recommended)
-- npm or bun
 
-### Setup Commands
+Install the following tools:
 
-1. **Clone the repository**:
-   ```bash
-   git clone <repo-url>
-   cd namma-prayana
-   ```
+- Node.js
+- npm
+- Git
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+You may also need API credentials for the external services you intend to enable.
 
-3. **Configure Environment Variables**:
-   Copy `.env.example` to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
+### 1. Clone the Repository
 
-   Configure the variables in `.env`:
-   ```env
-   # GEMINI_API_KEY: Injected by AI Studio or configure from Google AI Studio (https://aistudio.google.com)
-   GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
+```bash
+git clone https://github.com/AtharvKamath/Namma-Prayana-.git
+```
 
-   # VITE_GOOGLE_MAPS_API_KEY: Google Maps Platform API key
-   VITE_GOOGLE_MAPS_API_KEY="YOUR_GOOGLE_MAPS_API_KEY"
-   ```
+### 2. Open the Project Folder
 
-4. **Run the Development Server**:
-   ```bash
-   npm run dev
-   ```
-   Open your browser at `http://localhost:3000`.
+```bash
+cd Namma-Prayana-
+```
 
-5. **Build for Production**:
-   ```bash
-   npm run build
-   ```
+### 3. Install Dependencies
 
-6. **Run Production Server**:
-   ```bash
-   npm start
-   ```
+```bash
+npm install
+```
+
+### 4. Configure Environment Variables
+
+Check the repository's `.env.example` file for the variables supported by your version of the application.
+
+Create a local `.env` file and configure the values required for your intended setup.
+
+Example:
+
+```env
+ENABLE_GEMINI_AI=false
+GEMINI_API_KEY=your_gemini_api_key
+APP_URL=your_application_url
+VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+```
+
+These are illustrative placeholders. Use the exact variable names and formats expected by the source code and deployment environment.
+
+**Security:** Never commit real API keys, passwords, service-account credentials, or other secrets to GitHub. Keep server-side secrets on the server and use environment variables in the deployment platform.
+
+### 5. Start the Application
+
+Check `package.json` for the project's available scripts. If the following scripts are defined, use:
+
+```bash
+npm run dev
+```
+
+For a production build, if supported by the project:
+
+```bash
+npm run build
+```
+
+Use the actual scripts in `package.json` if they differ from these examples.
+
+## 🔐 Security and Configuration
+
+- Keep Gemini API credentials on the server side.
+- Do not expose server-side secrets in frontend code.
+- Do not commit `.env` files containing real credentials.
+- Configure Firebase and Google Maps credentials according to the requirements of the enabled features.
+- Restrict API usage and permissions appropriately for your deployment.
+
+## ⚠️ Limitations
+
+- AI-generated itineraries are suggestions and may require verification.
+- Estimated costs can differ from actual travel expenses.
+- Transport, hotel, map, and other external services may change their availability, prices, or information.
+- The application does not guarantee bookings or real-time availability unless a service explicitly provides that functionality.
+- Internet access and external API availability may affect some features.
+
+## 🔮 Future Enhancements
+
+Potential future improvements include:
+
+- More accurate destination information and verified travel details.
+- Improved route planning and travel-time estimates.
+- Additional travel-service integrations.
+- Expanded Kannada translations.
+- Enhanced itinerary customization and accessibility.
+- More comprehensive testing of AI-generated travel plans.
+
+## 🎯 Project Objective
+
+The goal of Namma Prayana is to make Karnataka tourism easier to explore by bringing AI-assisted trip planning, destination discovery, and Kannada language support together in one accessible platform.
+
+## 👨‍💻 Project Information
+
+- **Project:** Namma Prayana
+- **Hackathon:** Kannada Digital Innovation Hackathon 2026
+- **Problem Statement:** AI Travel Planner for Karnataka
+- **Repository:** https://github.com/AtharvKamath/Namma-Prayana-
+- **Live Demo:** https://namma-prayana.ai.studio
 
 ---
 
-## 6. Official Data Sources & Attribution
-
-- **Archaeological Survey of India (ASI)**: Official entry fees, opening hours, and historical background for Hampi, Badami, Pattadakal, Aihole, and Belur & Halebidu.
-- **Department of Tourism, Government of Karnataka (KSTDC)**: Official tourism portal references, circuit guidelines, and destination descriptions.
-- **Karnataka Forest Department (Aranya Portal)**: Permit requirements and wildlife safari details for Kudremukh, Kabini, and Nagarhole.
-- **Geological Survey of India (GSI)**: Geological history of St. Mary's Islands columnar basalt rocks.
-- **Imagery**: Curated high-resolution destination photography via Unsplash.
-
----
-
-## 7. Emergency Contact Numbers (Karnataka)
-
-- **National Emergency Helpline**: `112` (Police, Fire, Ambulance)
-- **Karnataka State Tourism Helpline**: `1800-425-4646` / `080-22352525`
-- **KSRTC Customer Care**: `080-49596666` / `7760990034`
-- **Women Helpline**: `1091`
-- **Wildlife & Forest Rescue**: `1926`
-
----
-
-*NAMMA PRAYANA (ನಮ್ಮ ಪ್ರಯಾಣ) — Your Journey, Your Story.*
+**Namma Prayana – Your Journey, Your Story.**
